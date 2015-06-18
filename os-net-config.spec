@@ -1,6 +1,6 @@
 Name:			os-net-config
 Version:		0.1.3
-Release:		1%{?dist}
+Release:		2%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
@@ -59,6 +59,9 @@ sed -i s/REDHATOSNETCONFIGRELEASE/%{release}/ os_net_config/version.py
 
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.3-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Mon May 11 2015 Mike Burns <mburns@redhat.com> 0.1.3-1
 - Update to upstream 0.1.3
 
