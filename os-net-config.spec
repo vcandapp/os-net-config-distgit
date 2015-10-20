@@ -1,15 +1,13 @@
 Name:			os-net-config
-Version:		0.1.3
-Release:		2%{?dist}
+Version:		0.1.5
+Release:		1%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
 URL:			http://pypi.python.org/pypi/%{name}
 Source0:		http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
-#
-# patches_base=+1
-#
+Patch0001: 0001-PATCH-Remove-pbr-runtime-dependency.patch
 
 BuildArch:	noarch
 BuildRequires:	python-setuptools
@@ -29,6 +27,7 @@ Requires:	python-oslo-utils
 Requires:	python-netaddr
 Requires:	python-iso8601
 Requires:	python-six >= 1.5.0
+Requires:	initscripts
 Requires:	PyYAML
 
 %description
@@ -38,38 +37,30 @@ Host network configuration tool for OpenStack.
 
 %setup -q -n %{name}-%{version}
 
+%patch0001 -p1
 
 sed -i '/setuptools_git/d' setup.py
 sed -i s/REDHATOSNETCONFIGVERSION/%{version}/ os_net_config/version.py
 sed -i s/REDHATOSNETCONFIGRELEASE/%{release}/ os_net_config/version.py
 
 %build
-%{__python} setup.py build
-%{__python} setup.py build_sphinx
+%{__python2} setup.py build
+%{__python2} setup.py build_sphinx
 
 %install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
 
 %files
 %doc README.rst
 %doc LICENSE
 %doc doc/build/html
 %{_bindir}/os-net-config
-%{python_sitelib}/os_net_config*
+%{python2_sitelib}/os_net_config*
 
 
 %changelog
-* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.1.3-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Mon May 11 2015 Mike Burns <mburns@redhat.com> 0.1.3-1
-- Update to upstream 0.1.3
-
-* Mon May 11 2015 Mike Burns <mburns@redhat.com> 0.1.2-1
-- Update to upstream 0.1.2
-
-* Fri May 08 2015 Mike Burns <mburns@redhat.com> 0.1.3-2
-- Update to upstream 0.1.3
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.5-1
+- Update to upstream 0.1.5
 
 * Fri Feb 13 2015 Ben Nemec <bnemec@redhat.com> - 0.1.1-3
 - Fix BuildRequires in the srpm
