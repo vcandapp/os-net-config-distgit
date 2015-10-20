@@ -1,6 +1,6 @@
 Name:			os-net-config
 Version:		0.1.5
-Release:		1%{?dist}
+Release:		2%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
@@ -16,6 +16,7 @@ BuildRequires:	python-pbr
 BuildRequires:	python-sphinx
 BuildRequires:	python-oslo-sphinx
 
+Requires:	python-pbr
 Requires:	python-setuptools
 Requires:	python-argparse
 Requires:	python-anyjson
@@ -59,6 +60,9 @@ sed -i s/REDHATOSNETCONFIGRELEASE/%{release}/ os_net_config/version.py
 
 
 %changelog
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.5-2
+- Add Requires: python-pbr
+
 * Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.5-1
 - Update to upstream 0.1.5
 
