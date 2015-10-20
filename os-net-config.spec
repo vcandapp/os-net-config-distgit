@@ -1,13 +1,11 @@
 Name:			os-net-config
 Version:		0.1.5
-Release:		2%{?dist}
+Release:		3%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
 URL:			http://pypi.python.org/pypi/%{name}
 Source0:		http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
-
-Patch0001: 0001-PATCH-Remove-pbr-runtime-dependency.patch
 
 BuildArch:	noarch
 BuildRequires:	python-setuptools
@@ -35,14 +33,7 @@ Requires:	PyYAML
 Host network configuration tool for OpenStack.
 
 %prep
-
 %setup -q -n %{name}-%{version}
-
-%patch0001 -p1
-
-sed -i '/setuptools_git/d' setup.py
-sed -i s/REDHATOSNETCONFIGVERSION/%{version}/ os_net_config/version.py
-sed -i s/REDHATOSNETCONFIGRELEASE/%{release}/ os_net_config/version.py
 
 %build
 %{__python2} setup.py build
@@ -60,7 +51,7 @@ sed -i s/REDHATOSNETCONFIGRELEASE/%{release}/ os_net_config/version.py
 
 
 %changelog
-* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.5-2
+* Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.5-3
 - Add Requires: python-pbr
 
 * Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.5-1
