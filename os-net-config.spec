@@ -1,6 +1,6 @@
 Name:			os-net-config
 Version:		0.1.5
-Release:		3%{?dist}
+Release:		4%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
@@ -51,6 +51,9 @@ Host network configuration tool for OpenStack.
 
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.1.5-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Tue Oct 20 2015 James Slagle <jslagle@redhat.com> 0.1.5-3
 - Add Requires: python-pbr
 
