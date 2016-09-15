@@ -6,7 +6,8 @@ Summary:		Host network configuration tool
 
 License:		ASL 2.0
 URL:			http://pypi.python.org/pypi/%{name}
-Source0:		http://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
+Source0:		https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
+
 Patch0001: 0001-PATCH-Remove-pbr-runtime-dependency.patch
 
 BuildArch:	noarch
