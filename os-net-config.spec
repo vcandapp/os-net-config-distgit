@@ -18,7 +18,6 @@ BuildRequires:	python-sphinx
 BuildRequires:	python-oslo-sphinx
 
 Requires:	python-setuptools
-Requires:	python-argparse
 Requires:	python-anyjson
 Requires:	python-babel
 Requires:	python-eventlet
