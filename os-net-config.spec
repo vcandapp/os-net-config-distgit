@@ -1,17 +1,12 @@
-%global milestone .0rc2
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:			os-net-config
 Version:		5.0.0
-Release:		0.2%{?milestone}%{?dist}
+Release:		1%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
 URL:			http://pypi.python.org/pypi/%{name}
 Source0:		http://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
-
-#
-# patches_base=5.0.0.0rc2
-#
 Patch0001: 0001-PATCH-Remove-pbr-runtime-dependency.patch
 
 BuildArch:	noarch
@@ -63,6 +58,9 @@ sed -i s/REDHATOSNETCONFIGRELEASE/%{release}/ os_net_config/version.py
 
 
 %changelog
+* Thu Oct 06 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.0.0-1
+- Update to 5.0.0
+
 * Fri Sep 30 2016 Alfredo Moralejo <amoralej@redhat.com> 5.0.0-0.2.0rc2
 - Update to 5.0.0.0rc2
 
