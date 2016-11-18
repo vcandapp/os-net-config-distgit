@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:			os-net-config
 Version:		5.0.0
-Release:		1%{?dist}
+Release:		2%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
@@ -52,6 +52,9 @@ Host network configuration tool for OpenStack.
 
 
 %changelog
+* Thu Nov 17 2016 Jon Schlueter <jschluet@redhat.com> 5.0.0-2
+- rebuild with pbr again
+
 * Thu Oct 06 2016 Haikel Guemar <hguemar@fedoraproject.org> 5.0.0-1
 - Update to 5.0.0
 
