@@ -26,6 +26,10 @@ Requires:	python-netaddr
 Requires:	python-iso8601
 Requires:	python-six >= 1.5.0
 Requires:	initscripts
+Requires:	iproute
+Requires:	ethtool
+Requires:	openvswitch
+Requires:	dhclient
 Requires:	PyYAML
 Requires:	python-pbr
 
