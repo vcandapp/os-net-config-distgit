@@ -16,22 +16,23 @@ BuildRequires:	python-sphinx
 BuildRequires:	python-oslo-sphinx
 
 Requires:	python-setuptools
-Requires:	python-anyjson
+Requires:	python-anyjson >= 0.3.3
 Requires:	python-babel
-Requires:	python-eventlet
-Requires:	python-oslo-concurrency
+Requires:	python-eventlet >= 0.18.2
+Requires:	python-oslo-concurrency >= 3.8.0
 Requires:	python-oslo-config
-Requires:	python-oslo-utils
-Requires:	python-netaddr
-Requires:	python-iso8601
-Requires:	python-six >= 1.5.0
+Requires:	python-oslo-utils >= 3.20.0
+Requires:	python-netaddr >= 0.7.13
+Requires:	python-iso8601 >= 0.1.11
+Requires:	python-six >= 1.9.0
 Requires:	initscripts
 Requires:	iproute
 Requires:	ethtool
 Requires:	openvswitch
 Requires:	dhclient
-Requires:	PyYAML
-Requires:	python-pbr
+Requires:	PyYAML >= 3.10
+Requires:	python-pbr >= 2.0.0
+Requires:	python-jsonschema >= 2.0.0
 
 %description
 Host network configuration tool for OpenStack.
