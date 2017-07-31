@@ -15,7 +15,6 @@ BuildRequires:	python-pbr
 BuildRequires:	python-sphinx
 BuildRequires:	python-oslo-sphinx
 
-Requires:	python-setuptools
 Requires:	python-anyjson >= 0.3.3
 Requires:	python-babel
 Requires:	python-eventlet >= 0.18.2
