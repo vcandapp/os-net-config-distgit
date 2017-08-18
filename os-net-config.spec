@@ -16,7 +16,6 @@ BuildRequires:	python-sphinx
 BuildRequires:	python-oslo-sphinx
 
 Requires:	python-anyjson >= 0.3.3
-Requires:	python-babel
 Requires:	python-eventlet >= 0.18.2
 Requires:	python-oslo-concurrency >= 3.8.0
 Requires:	python-oslo-config
