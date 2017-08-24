@@ -1,7 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:			os-net-config
-Version:		XXX
-Release:		XXX
+Version:		7.2.0
+Release:		1%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
@@ -55,3 +55,6 @@ Host network configuration tool for OpenStack.
 
 
 %changelog
+* Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 7.2.0-1
+- Update to 7.2.0
+
