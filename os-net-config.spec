@@ -51,6 +51,7 @@ Host network configuration tool for OpenStack.
 %doc LICENSE
 %doc doc/build/html
 %{_bindir}/os-net-config
+%{_bindir}/os-net-config-sriov
 %{python_sitelib}/os_net_config*
 
 
