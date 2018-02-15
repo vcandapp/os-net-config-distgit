@@ -45,6 +45,8 @@ Host network configuration tool for OpenStack.
 
 %install
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
+# workaround until https://review.openstack.org/527571 is merged
+touch %{buildroot}%{_bindir}/os-net-config-sriov
 
 %files
 %doc README.rst
