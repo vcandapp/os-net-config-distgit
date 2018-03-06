@@ -11,26 +11,26 @@ Source0:		https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar
 BuildArch:	noarch
 BuildRequires:	python-setuptools
 BuildRequires:	python2-devel
-BuildRequires:	python-pbr
-BuildRequires:	python-sphinx
-BuildRequires:	python-oslo-sphinx
+BuildRequires:	python2-pbr
+BuildRequires:	python2-sphinx
+BuildRequires:	python2-oslo-sphinx
 
 Requires:	python-anyjson >= 0.3.3
-Requires:	python-eventlet >= 0.18.2
-Requires:	python-oslo-concurrency >= 3.8.0
-Requires:	python-oslo-config
-Requires:	python-oslo-utils >= 3.20.0
-Requires:	python-netaddr >= 0.7.13
-Requires:	python-iso8601 >= 0.1.11
-Requires:	python-six >= 1.9.0
+Requires:	python2-eventlet >= 0.18.2
+Requires:	python2-oslo-concurrency >= 3.8.0
+Requires:	python2-oslo-config
+Requires:	python2-oslo-utils >= 3.20.0
+Requires:	python2-netaddr >= 0.7.13
+Requires:	python2-iso8601 >= 0.1.11
+Requires:	python2-six >= 1.9.0
 Requires:	initscripts
 Requires:	iproute
 Requires:	ethtool
 Requires:	openvswitch
 Requires:	dhclient
 Requires:	PyYAML >= 3.10
-Requires:	python-pbr >= 2.0.0
-Requires:	python-jsonschema >= 2.0.0
+Requires:	python2-pbr >= 2.0.0
+Requires:	python2-jsonschema >= 2.0.0
 
 %description
 Host network configuration tool for OpenStack.
