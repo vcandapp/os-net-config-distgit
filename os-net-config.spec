@@ -1,6 +1,6 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:			os-net-config
-Version:		5.2.3
+Version:		5.2.4
 Release:		1%{?dist}
 Summary:		Host network configuration tool
 
@@ -52,6 +52,9 @@ Host network configuration tool for OpenStack.
 
 
 %changelog
+* Tue Mar 27 2018 RDO <dev@lists.rdoproject.org> 5.2.4-1
+- Update to 5.2.4
+
 * Thu Mar 08 2018 RDO <dev@lists.rdoproject.org> 5.2.3-1
 - Update to 5.2.3
 
