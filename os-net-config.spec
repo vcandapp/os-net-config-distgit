@@ -26,7 +26,6 @@ Requires:	python2-six >= 1.9.0
 Requires:	initscripts
 Requires:	iproute
 Requires:	ethtool
-Requires:	openvswitch
 Requires:	dhclient
 Requires:	PyYAML >= 3.10
 Requires:	python2-pbr >= 2.0.0
