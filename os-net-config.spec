@@ -1,6 +1,6 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:			os-net-config
-Version:		8.4.1
+Version:		8.4.2
 Release:		1%{?dist}
 Summary:		Host network configuration tool
 
@@ -55,6 +55,9 @@ Host network configuration tool for OpenStack.
 
 
 %changelog
+* Mon Jun 04 2018 RDO <dev@lists.rdoproject.org> 8.4.2-1
+- Update to 8.4.2
+
 * Mon Apr 23 2018 RDO <dev@lists.rdoproject.org> 8.4.1-1
 - Update to 8.4.1
 
