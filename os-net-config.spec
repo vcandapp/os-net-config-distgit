@@ -30,6 +30,7 @@ Requires:	dhclient
 Requires:	PyYAML >= 3.10
 Requires:	python2-pbr >= 2.0.0
 Requires:	python2-jsonschema >= 2.0.0
+Requires:	python-pyudev >= 0.15
 
 %description
 Host network configuration tool for OpenStack.
