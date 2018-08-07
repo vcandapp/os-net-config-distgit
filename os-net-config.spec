@@ -1,4 +1,18 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pydefault 3
+%else
+%global pydefault 2
+%endif
+
+%global pydefault_bin python%{pydefault}
+%global pydefault_sitelib %python%{pydefault}_sitelib
+%global pydefault_install %py%{pydefault}_install
+%global pydefault_build %py%{pydefault}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
+
 Name:			os-net-config
 Version:		XXX
 Release:		XXX
@@ -8,29 +22,38 @@ License:		ASL 2.0
 URL:			http://pypi.python.org/pypi/%{name}
 Source0:		https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 
-BuildArch:	noarch
-BuildRequires:	python-setuptools
-BuildRequires:	python2-devel
-BuildRequires:	python2-pbr
-BuildRequires:	python2-sphinx
-BuildRequires:	python2-oslo-sphinx
-
-Requires:	python-anyjson >= 0.3.3
-Requires:	python2-eventlet >= 0.18.2
-Requires:	python2-oslo-concurrency >= 3.8.0
-Requires:	python2-oslo-config
-Requires:	python2-oslo-utils >= 3.20.0
-Requires:	python2-netaddr >= 0.7.13
-Requires:	python2-iso8601 >= 0.1.11
-Requires:	python2-six >= 1.9.0
 Requires:	initscripts
 Requires:	iproute
 Requires:	ethtool
 Requires:	dhclient
+
+BuildArch:	noarch
+
+BuildRequires:	python%{pydefault}-setuptools
+BuildRequires:	python%{pydefault}-devel
+BuildRequires:	python%{pydefault}-pbr
+BuildRequires:	python%{pydefault}-sphinx
+BuildRequires:	python%{pydefault}-oslo-sphinx
+
+Requires:	python%{pydefault}-eventlet >= 0.18.2
+Requires:	python%{pydefault}-oslo-concurrency >= 3.8.0
+Requires:	python%{pydefault}-oslo-config
+Requires:	python%{pydefault}-oslo-utils >= 3.20.0
+Requires:	python%{pydefault}-netaddr >= 0.7.13
+Requires:	python%{pydefault}-iso8601 >= 0.1.11
+Requires:	python%{pydefault}-six >= 1.9.0
+Requires:	python%{pydefault}-pbr >= 2.0.0
+Requires:	python%{pydefault}-jsonschema >= 2.0.0
+
+%if %{pydefault} == 2
 Requires:	PyYAML >= 3.10
-Requires:	python2-pbr >= 2.0.0
-Requires:	python2-jsonschema >= 2.0.0
+Requires:	python-anyjson >= 0.3.3
 Requires:	python-pyudev >= 0.15
+%else
+Requires:	python%{pydefault}-PyYAML >= 3.10
+Requires:	python%{pydefault}-anyjson >= 0.3.3
+Requires:	python%{pydefault}-pyudev >= 0.15
+%endif
 
 %description
 Host network configuration tool for OpenStack.
@@ -40,11 +63,11 @@ Host network configuration tool for OpenStack.
 %setup -q -n %{name}-%{upstream_version}
 
 %build
-%{__python} setup.py build
-%{__python} setup.py build_sphinx
+%{pydefault_build}
+%{pydefault_bin} setup.py build_sphinx
 
 %install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
+%{pydefault_install}
 
 %files
 %doc README.rst
@@ -52,7 +75,6 @@ Host network configuration tool for OpenStack.
 %doc doc/build/html
 %{_bindir}/os-net-config
 %{_bindir}/os-net-config-sriov
-%{python_sitelib}/os_net_config*
-
+%{pydefault_sitelib}/os_net_config*
 
 %changelog
