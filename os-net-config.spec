@@ -55,6 +55,11 @@ Requires:	python%{pydefault}-anyjson >= 0.3.3
 Requires:	python%{pydefault}-pyudev >= 0.15
 %endif
 
+%if 0%{?rhel} > 7
+# RHEL8 requires a network-scripts package for ifcfg backwards compatibility
+Requires:   network-scripts
+%endif
+
 %description
 Host network configuration tool for OpenStack.
 
