@@ -33,7 +33,6 @@ BuildRequires:	python%{pyver}-setuptools
 BuildRequires:	python%{pyver}-devel
 BuildRequires:	python%{pyver}-pbr
 BuildRequires:	python%{pyver}-sphinx
-BuildRequires:	python%{pyver}-oslo-sphinx
 BuildRequires:	python%{pyver}-openstackdocstheme
 
 Requires:	python%{pyver}-eventlet >= 0.18.2
