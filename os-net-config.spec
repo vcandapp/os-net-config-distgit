@@ -48,11 +48,11 @@ Requires:	python%{pyver}-jsonschema >= 2.0.0
 %if %{pyver} == 2
 Requires:	PyYAML >= 3.10
 Requires:	python-anyjson >= 0.3.3
-Requires:	python-pyudev >= 0.15
+Requires:	python-pyudev >= 0.16.1
 %else
 Requires:	python%{pyver}-PyYAML >= 3.10
 Requires:	python%{pyver}-anyjson >= 0.3.3
-Requires:	python%{pyver}-pyudev >= 0.15
+Requires:	python%{pyver}-pyudev >= 0.16.1
 %endif
 
 %if 0%{?rhel} > 7
