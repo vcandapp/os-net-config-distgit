@@ -14,7 +14,7 @@
 
 
 Name:			os-net-config
-Version:		10.4.1
+Version:		10.4.2
 Release:		1%{?dist}
 Summary:		Host network configuration tool
 
@@ -83,6 +83,9 @@ Host network configuration tool for OpenStack.
 %{pyver_sitelib}/os_net_config*
 
 %changelog
+* Thu Dec 12 2019 RDO <dev@lists.rdoproject.org> 10.4.2-1
+- Update to 10.4.2
+
 * Wed Sep 11 2019 RDO <dev@lists.rdoproject.org> 10.4.1-1
 - Update to 10.4.1
 
