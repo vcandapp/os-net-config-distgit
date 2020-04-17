@@ -29,6 +29,7 @@ Requires:	dhclient
 
 BuildArch:	noarch
 
+BuildRequires:  git
 BuildRequires:	python%{pyver}-setuptools
 BuildRequires:	python%{pyver}-devel
 BuildRequires:	python%{pyver}-pbr
@@ -65,11 +66,13 @@ Host network configuration tool for OpenStack.
 
 %prep
 
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version} -S git
 
 %build
 %{pyver_build}
-%{pyver_bin} setup.py build_sphinx
+sphinx-build-%{pyver} -W -b html doc/source doc/build/html
+# Fix hidden-file-or-dir warnings
+rm -fr doc/build/html/.{doctrees,buildinfo}
 
 %install
 %{pyver_install}
