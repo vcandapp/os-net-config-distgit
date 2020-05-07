@@ -2,8 +2,8 @@
 
 
 Name:			os-net-config
-Version:		XXX
-Release:		XXX
+Version:		12.2.0
+Release:		1%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
@@ -68,3 +68,6 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %{python3_sitelib}/os_net_config*
 
 %changelog
+* Thu May 07 2020 RDO <dev@lists.rdoproject.org> 12.2.0-1
+- Update to 12.2.0
+
