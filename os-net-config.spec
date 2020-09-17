@@ -32,7 +32,7 @@ Requires:	python3-netaddr >= 0.7.13
 Requires:	python3-iso8601 >= 0.1.11
 Requires:	python3-six >= 1.9.0
 Requires:	python3-pbr >= 2.0.0
-Requires:	python3-jsonschema >= 2.0.0
+Requires:	python3-jsonschema >= 2.6.0
 
 Requires:	python3-PyYAML >= 3.10
 Requires:	python3-anyjson >= 0.3.3
