@@ -1,14 +1,21 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 
 Name:			os-net-config
 Version:		12.6.0
-Release:		1%{?dist}
+Release:		2%{?dist}
 Summary:		Host network configuration tool
 
 License:		ASL 2.0
 URL:			http://pypi.python.org/pypi/%{name}
 Source0:		https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz.asc
+Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
 
 Requires:	initscripts
 Requires:	iproute
@@ -16,6 +23,12 @@ Requires:	ethtool
 Requires:	dhclient
 
 BuildArch:	noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+BuildRequires:  openstack-macros
+%endif
 
 BuildRequires:  git
 BuildRequires:	python3-setuptools
@@ -47,6 +60,10 @@ Requires:   network-scripts
 Host network configuration tool for OpenStack.
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 
 %autosetup -n %{name}-%{upstream_version} -S git
 
@@ -68,6 +85,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %{python3_sitelib}/os_net_config*
 
 %changelog
+* Tue Oct 20 2020 Joel Capitao <jcapitao@redhat.com> 12.6.0-2
+- Enable sources tarball validation using GPG signature.
+
 * Tue Sep 29 2020 RDO <dev@lists.rdoproject.org> 12.6.0-1
 - Update to 12.6.0
 
