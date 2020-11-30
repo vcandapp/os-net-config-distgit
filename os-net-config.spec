@@ -58,9 +58,6 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 
 %install
 %{py3_install}
-# workaround until
-# https://review.opendev.org/c/openstack/os-net-config/+/750206 is merged
-touch %{buildroot}%{_bindir}/os-net-config-sriov-bind
 
 %files
 %doc README.rst
