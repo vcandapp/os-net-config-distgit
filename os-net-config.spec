@@ -2,7 +2,7 @@
 
 
 Name:			os-net-config
-Version:		12.3.3
+Version:		12.3.4
 Release:		1%{?dist}
 Summary:		Host network configuration tool
 
@@ -69,6 +69,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %{python3_sitelib}/os_net_config*
 
 %changelog
+* Wed Apr 14 2021 RDO <dev@lists.rdoproject.org> 12.3.4-1
+- Update to 12.3.4
+
 * Thu Jan 28 2021 RDO <dev@lists.rdoproject.org> 12.3.3-1
 - Update to 12.3.3
 
