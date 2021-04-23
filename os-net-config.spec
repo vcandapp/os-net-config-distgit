@@ -54,6 +54,10 @@ Requires:	python3-pyudev >= 0.16.1
 %if 0%{?rhel} > 7
 # RHEL8 requires a network-scripts package for ifcfg backwards compatibility
 Requires:   network-scripts
+# Needed for NetworkManager support
+Requires:	NetworkManager-ovs
+Requires:	nmstate
+Requires:	nispor
 %endif
 
 %description
