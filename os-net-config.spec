@@ -4,7 +4,7 @@
 
 
 Name:			os-net-config
-Version:		14.1.1
+Version:		14.2.0
 Release:		1%{?dist}
 Summary:		Host network configuration tool
 
@@ -86,6 +86,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %{python3_sitelib}/os_net_config*
 
 %changelog
+* Mon Aug 16 2021 RDO <dev@lists.rdoproject.org> 14.2.0-1
+- Update to 14.2.0
+
 * Mon Jul 19 2021 RDO <dev@lists.rdoproject.org> 14.1.1-1
 - Update to 14.1.1
 
