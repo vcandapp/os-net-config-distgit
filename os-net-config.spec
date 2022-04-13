@@ -1,10 +1,10 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
+%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 
 Name:			os-net-config
-Version:		15.1.0
+Version:		15.2.0
 Release:		1%{?dist}
 Summary:		Host network configuration tool
 
@@ -88,6 +88,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %{python3_sitelib}/os_net_config*
 
 %changelog
+* Wed Apr 13 2022 RDO <dev@lists.rdoproject.org> 15.2.0-1
+- Update to 15.2.0
+
 * Mon Apr 04 2022 RDO <dev@lists.rdoproject.org> 15.1.0-1
 - Update to 15.1.0
 
