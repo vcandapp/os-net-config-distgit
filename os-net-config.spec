@@ -46,16 +46,15 @@ Requires:	python3-jsonschema >= 3.2.0
 
 Requires:	python3-PyYAML >= 3.10
 Requires:	python3-pyudev >= 0.16.1
-
-%if 0%{?rhel} == 8
-# RHEL8 requires a network-scripts package for ifcfg backwards compatibility
-Requires:   network-scripts
-%endif
-%if 0%{?rhel} >= 8
 # Needed for NetworkManager support
 Requires:	NetworkManager-ovs
 Requires:	nmstate
 Requires:	nispor
+Requires:	python3-libnmstate
+
+%if 0%{?rhel} == 8
+# RHEL8 requires a network-scripts package for ifcfg backwards compatibility
+Requires:   network-scripts
 %endif
 
 %description
