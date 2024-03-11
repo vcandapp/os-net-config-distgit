@@ -69,9 +69,6 @@ sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
 sed -i /^minversion.*/d tox.ini
 sed -i /^requires.*virtualenv.*/d tox.ini
 
-# (TODO) There is no pyroute2>=0.7.10 in fedora yet.
-sed -i 's/pyroute2>=0.7.10/pyroute2>=0.7.3/g' requirements.txt
-
 # Exclude some bad-known BRs
 for pkg in %{excluded_brs}; do
   for reqfile in doc/requirements.txt test-requirements.txt; do
