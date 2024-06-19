@@ -46,6 +46,7 @@ Requires:	initscripts
 Requires:	iproute
 Requires:	ethtool
 Requires:	dhclient
+Requires: 	mstflint
 
 # Needed for NetworkManager support
 Requires:	NetworkManager-ovs
