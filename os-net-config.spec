@@ -44,6 +44,7 @@ Requires:	python3-netaddr >= 0.7.13
 Requires:	python3-pbr >= 2.0.0
 Requires:	python3-jsonschema >= 3.2.0
 Requires:	python3-pyroute2 >= 0.7.3
+Requires: 	mstflint
 
 Requires:	python3-PyYAML >= 3.10
 Requires:	python3-pyudev >= 0.16.1
