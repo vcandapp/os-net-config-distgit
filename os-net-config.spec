@@ -41,7 +41,6 @@ BuildRequires:  nmstate
 BuildRequires:  NetworkManager-ovs
 BuildRequires:  python3-libnmstate
 BuildRequires:  nmstate-libs
-BuildRequires:  mstflint
 
 Requires:	python3-eventlet >= 0.18.2
 Requires:	python3-oslo-concurrency >= 3.8.0
@@ -62,6 +61,7 @@ Requires:	nmstate
 Requires:	nispor
 Requires:	python3-libnmstate
 Requires:       python3-pyroute2 >= 0.6.6
+Requires:       mstflint
 
 %if 0%{?rhel} == 8
 # RHEL8 requires a network-scripts package for ifcfg backwards compatibility
