@@ -24,6 +24,12 @@ Source101:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_vers
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 BuildArch:	noarch
+%if 0%{?rhel} || 0%{?centos}
+# The mstflint package does not have builds for these architectures
+# on RHEL; choose a different arch host when building the noarch
+# package.
+ExcludeArch:    s390 s390x
+%endif
 
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
