@@ -11,6 +11,14 @@ Summary:		Host network configuration tool
 License:		ASL 2.0
 URL:			http://pypi.python.org/pypi/%{name}
 Source0:		https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
+
+%if 0%{?rhel} || 0%{?centos}
+# The mstflint package does not have builds for these architectures
+# on RHEL; choose a different arch host when building the noarch
+# package.
+ExcludeArch:    s390 s390x
+%endif
+
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
 Source101:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz.asc
