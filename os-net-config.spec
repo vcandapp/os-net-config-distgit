@@ -20,6 +20,12 @@ License:		Apache-2.0
 URL:			http://pypi.python.org/pypi/%{name}
 Source0:		%{pypi_source}
 BuildArch:	noarch
+%if 0%{?rhel} || 0%{?centos}
+# The mstflint package does not have builds for these architectures
+# on RHEL; choose a different arch host when building the noarch
+# package.
+ExcludeArch:    s390 s390x
+%endif
 
 # Required for tarball sources verification
 BuildRequires:  git-core
