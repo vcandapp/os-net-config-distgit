@@ -30,7 +30,9 @@ BuildRequires:	NetworkManager-ovs
 BuildRequires:	iproute
 BuildRequires:	ethtool
 BuildRequires:	nmstate
-BuildRequires:	nmstate-libs
+%if !(0%{?rhel} < 9)
+BuildRequires:  nmstate-libs
+%endif
 BuildRequires:	python3-libnmstate
 BuildRequires:	nispor
 
