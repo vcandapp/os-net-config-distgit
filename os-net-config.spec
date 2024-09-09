@@ -16,6 +16,9 @@ Source0:		https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar
 Source101:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
+%if !(0%{?rhel} < 9)
+BuildRequires:  nmstate-libs
+%endif
 
 Requires:	initscripts
 Requires:	iproute
