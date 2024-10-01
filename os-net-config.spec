@@ -6,19 +6,16 @@
 %global excluded_brs %{excluded_brs} sphinx openstackdocstheme
 %endif
 %global with_doc 1
-%global pypi_name os_net_config
-%{?dlrn: %global tarsources %{name}}
-%{!?dlrn: %global tarsources %{pypi_name}}
 
 
 Name:			os-net-config
-Version:		XXX
-Release:		XXX
+Version:		18.0.0
+Release:		1%{?dist}
 Summary:		Host network configuration tool
 
 License:		Apache-2.0
 URL:			http://pypi.python.org/pypi/%{name}
-Source0:		%{pypi_source}
+Source0:		https://github.com/os-net-config/os-net-config/archive/%{upstream_version}/os-net-config-%{upstream_version}.tar.gz
 BuildArch:	noarch
 %if 0%{?rhel} || 0%{?centos}
 # The mstflint package does not have builds for these architectures
@@ -58,7 +55,7 @@ Requires:	nispor
 Host network configuration tool for OpenStack.
 
 %prep
-%autosetup -n %{tarsources}-%{upstream_version} -S git
+%autosetup -n os-net-config-%{upstream_version} -S git
 
 sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
 sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
@@ -112,4 +109,7 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %{python3_sitelib}/os_net_config*
 
 %changelog
+* Tue Oct 01 2024 RDO <dev@lists.rdoproject.org> 18.0.0-1
+- Update to 18.0.0
+
 
